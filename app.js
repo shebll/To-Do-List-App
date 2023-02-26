@@ -25,7 +25,7 @@ function addTaskToArray(taskName) {
     completed: false,
   };
   tasksArray.push(task);
-  console.log(tasksArray);
+  // console.log(tasksArray);
 }
 /////////////////////////////////////////////////////////////////////////
 ///////////// [4] function add the array of tasks to page ////////////////////
@@ -64,5 +64,33 @@ function getTaskFormLocal() {
     //   tasksArray.push(task);
     // });
   }
+}
+/////////////////////////////////////////////////////////////////////////
+///////////// [7] function when click on the task  delete span or not that mean task is done ////////////////////
+tasksDiv.addEventListener("click", (e) => {
+  if (e.target.classList.contains("delete")) {
+    // console.log(e.target.parentElement);
+    e.target.parentElement.remove(); ///remove form page but not from local
+    deleteTaskFromLocal(e.target.parentElement.getAttribute("data-id")); ///remove form  local
+    // console.log(e.target.parentElement.getAttribute("data-id"));
+  } else if (e.target.classList.contains("task")) {
+    e.target.classList.add("done");
+    tasksArray.map((task) => {
+      if (task.id == e.target.getAttribute("data-id")) {
+        return (task.completed = true);
+      }
+      return task;
+    });
+  }
+  addTaskToLocal(tasksArray);
+  // console.log(tasksArray);
+});
+/////////////////////////////////////////////////////////////////////////
+///////////// [8] function remove from local storage ////////////////////
+function deleteTaskFromLocal(tid) {
+  tasksArray = tasksArray.filter(function (task) {
+    return task.id != tid;
+  });
+  addTaskToLocal(tasksArray);
 }
 /////////////////////////////////////////////////////////////////////////
