@@ -80,3 +80,16 @@ body{
 .container .tasks .task.done{
   opacity: 0.4;
 }
+.container .tasks .task .delete{
+  font-size: 20px;
+  padding: 5px 10px;
+  background-color: red;
+  font-weight: bold;
+  color: white;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  cursor: pointer;
+}
