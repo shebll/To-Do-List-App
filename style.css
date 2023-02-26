@@ -1,0 +1,82 @@
+*{
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+body{
+  font-family:  Haettenschweiler, 'Arial Narrow Bold', sans-serif;  
+  background-image: url(j.jpg);
+  background-size: cover;
+}
+.container{
+  margin: 120px auto;
+  width: 900px;
+}
+@media (max-width:900px) {
+  .container{
+    width: 360px;
+  }
+}
+.container .form{
+  padding: 20px ;
+  background-color: #3e83ac;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.container .form .input{
+  background-color: antiquewhite;
+  flex: 5;
+  font-size: 25px;
+  height: 60px;
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  padding: 20px;
+}
+
+.container .form .add{
+  cursor: pointer;
+  flex: 1;
+  font-size: 25px;
+  height: 60px;
+  font-weight: bold;
+  background-color: rgb(45, 160, 106);
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.container .tasks{
+  background-color:  #3e83ac;
+  padding: 20px;
+  margin-top: 20px;
+
+}
+.container .tasks .task{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+  background-color: antiquewhite;
+  padding: 16px;
+  color: #1a1a1a;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+  margin-bottom: 10px;
+}
+.container .tasks .task:hover{
+  background-color: rgb(202, 179, 147);
+}
+.container .tasks .task.done{
+  opacity: 0.4;
+}
